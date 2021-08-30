@@ -1,7 +1,9 @@
 const express = require("express")
 const app = express()
+var cors = require('cors');
 var users = require('./user');
 
+app.use(cors());
 app.use(express.json());
 app.get('/users', (req, res) => {
     res.json(users.list())
